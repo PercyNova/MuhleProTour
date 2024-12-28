@@ -103,7 +103,6 @@ Here’s an overview of the folder structure for the website:
 
 ## Known Limitations
 
-- **Testimonials/Reviews**: The testimonials/reviews section is not yet implemented in this version of the website.
 - **Booking System**: The booking system is not yet functional as the paywall API has not been integrated.
 
 ---
