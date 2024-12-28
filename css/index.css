@@ -1,0 +1,239 @@
+/* LOGO AND CALL-TO-ACTION */
+.FF {
+    width: 50vh;
+}
+
+.LGCTA {
+    display: flex;
+}
+
+.MV {
+    display: flex;
+}
+
+span {
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    border-right: 1px solid rgba(102, 102, 102, 0.479);
+    width: 50%;
+}
+
+span h3 {
+    color: #F3D215;
+    font-weight: bold;
+}
+
+/* TESTIMONIALS STYLES */
+.testimonials {
+    width: 100%;
+    gap: 5%;
+    padding: 0 2% 0 2%;
+    margin-bottom: 10%;
+}
+.testimonials h1 {
+    grid-column: 1 /-1;
+}
+.t-blocks {
+    width: 100%;
+    background-color: rgba(206, 206, 206, 0.205); /* Slightly transparent white for the glass effect */
+    backdrop-filter: blur(50px); /* Creates the blur effect behind the element */
+    padding: 2.5%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    border: 1px solid rgba(255, 255, 255, 0.096); /* Optional: Adds a subtle border */
+}
+
+
+.p-details {
+    display: flex;
+}
+.p-details img {
+    width: 20%; 
+    height: 20%;  /* Set the height to the same percentage as the width */
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.p-details h3 {
+    font-size: large;
+    text-align: start;
+    color: white;
+}
+.location {
+    font-size: smaller;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    color: #F3D215;
+    text-align: start;
+}
+.message {
+    font-size: small;
+    padding: 5% 1% 1% 1%; 
+    text-align: justify;
+}
+.to-Tpage {
+    text-align: center;
+
+}
+.to-Tpage a {
+    color: #F3D215;
+    font-size: large;
+}
+
+.to-Tpage a:hover {
+    text-decoration: underline;
+}
+
+.info {
+    width: 60%;
+}
+
+/* RATING */
+.rating{
+    color: #000;
+    font-size: small;
+}
+
+.rating-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+  height: 5%;
+}
+
+.rating-box .stars {
+  display: flex;
+  gap: 3px;
+}
+.stars i {
+  color: #e6e6e6;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.stars i.active {
+  color: #F3D215;
+}
+
+/* CALL TO ACTION STYLES */
+.CTA {
+    margin-top: 5%;
+    color: white;
+    text-align: center;
+    padding: 5%;
+}
+.btn {
+    outline: 10px;
+    border: 1px solid #F3D215;
+    background-color: #f3d21516;
+    color: #F3D215;
+    width: 30%;
+    height: 30%;
+    margin: 2vw;
+    padding: 1vw;
+    font-weight: bold;
+}
+.btn:hover {
+    border: 1px solid #F3D215;
+    color: rgb(0, 0, 0);
+    background-color: #F3D215;
+}
+
+.gallery-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 767px) {
+    .LGCTA {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .FF {
+        width: 80vw; /* Adjust the width as needed for mobile */
+    }
+
+    span {
+        width: 100%; /* Full width for mobile */
+        border-right: none; /* Remove the border for mobile */
+        margin-top: 5%; /* Adjust spacing as needed for mobile */
+    }
+
+    .CTA {
+        border-bottom: 1px solid rgba(102, 102, 102, 0.479);
+    }
+
+    .MV {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .testimonials {
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .LGCTA {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .FF {
+        width: 80vw; /* Adjust the width as needed for mobile */
+    }
+
+    span {
+        width: 100%; /* Full width for mobile */
+        border-right: none; /* Remove the border for mobile */
+        margin-top: 5%; /* Adjust spacing as needed for mobile */
+    }
+}
+
+.dropdown-menu {
+    background-color: black;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e6e6e6;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0;
+    right: 1.5vw !important; /* Added to ensure menu stays visible */
+    left: auto !important; /* Added to ensure right alignment works */
+}
+
+.dropdown-item {
+    padding: 0.5rem 1.5rem;
+    color: white !important;
+}
+
+.dropdown-item:hover {
+    background-color: #333333; /* Changed to dark gray for better contrast */
+}
+
+/* Mobile dropdown styling */
+@media (max-width: 991px) {
+    .navbar-nav .dropdown-menu {
+        position: static !important;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: black; /* Changed to black to match desktop */
+        border: 0;
+        box-shadow: none;
+        padding-left: 15px;
+        right: 0 !important; /* Reset right positioning on mobile */
+    }
+
+    .dropdown-item {
+        color: white !important;
+    }
+
+    .dropdown-item:hover {
+        background-color: #333333;
+    }
+}
