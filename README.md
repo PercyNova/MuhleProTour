@@ -48,36 +48,6 @@ It consists of several key sections:
   
 ---
 
-## Folder Structure
-
-Here’s an overview of the folder structure for the website:
-
-```
-/MuhleProTours
-│
-├── /css
-│   ├── about.css           # Styles specific to the About Us page
-│   ├── overall.css         # General styles for the entire website
-│
-├── /img
-│   ├── logo-final.png      # The website's logo
-│   ├── CEO.png             # Image of the CEO
-│   ├── placeholder.png     # Placeholder images for gallery
-│
-├── /html
-│   ├── about.html          # About Us page
-│   ├── meet.html           # Meet Our Team page
-│   ├── booking.html        # Booking page (paywall API not yet implemented)
-│   ├── testimonies.html    # Testimonials page (not yet implemented)
-│
-├── /js
-│   ├── script.js           # JavaScript for dynamic interactions
-│
-└── index.html              # Home page of the website
-```
-
----
-
 ## Setup Instructions
 
 1. **Clone the Repository**:
