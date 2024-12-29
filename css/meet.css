@@ -1,0 +1,101 @@
+/* GLOBAL STYLES */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+
+.banner img {
+    z-index: 3;
+}
+
+.scrollable-container {
+    display: flex;
+    justify-content: center;
+    max-height: 600px; /* Adjust the height as needed */
+    max-width: 80%;
+    overflow-y: auto; /* Enable vertical scroll */
+    border: 1px solid #ccc; /* Optional: Add border for styling */
+    padding: 10px; /* Optional: Add padding for spacing */
+    margin-bottom: 15vh;
+    background-color:white;
+}
+
+/* EMPLOYEE GRID STYLING */
+.employee-grid {
+    margin: 2%; /* External spacing for the whole grid */
+}
+
+.employee-card {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-card h3 {
+    font-size: medium;
+    font-weight: bold;
+}
+
+
+.profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes the image circular */
+    border: 3px solid #F3D215; /* Gold border color */
+    object-fit: cover; /* Makes sure the image scales correctly */
+    display: block;
+    margin: 0 auto; /* Centers the image horizontally */
+    margin-bottom: 5%; /* Spacing below the image */
+    
+}
+
+.occupation {
+    font-weight: bold;
+    margin-top: 5%; /* Spacing above the occupation */
+    margin-bottom: 5%; /* Spacing below the occupation */
+    color: black !important;
+}
+
+.goal {
+    font-style: italic;
+    color: #000000 !important;
+    margin-bottom: 10px;
+    font-size: small;
+    padding: 0 5%; /* Horizontal padding */
+}
+
+/* RATINGS */
+.rating{
+    color: #000 !important;
+    font-size: small;
+    display: none;
+}
+
+.rating-box {
+  position: relative;
+  background: #fff;
+  display: none;
+  justify-content: center;
+  border-radius: 25px;
+  height: 5%;
+}
+
+.rating-box .stars {
+    gap: 3px;
+}
+
+.stars i {
+  color: #e6e6e6;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.stars i.active {
+  color: #ff9c1a;
+}
+
+@media only screen and (max-width: 767px) {
+    
+}

@@ -1,0 +1,240 @@
+/* IMAGE FOREFRONT STYLES */
+.FF {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    background-color: #ffffff60;
+    border-radius: 5px;
+    margin: 5% auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 3vw;
+}
+
+form h2 {
+    text-align: center;
+    font-size: 1.5rem; 
+    font-weight: bolder;
+    color: white;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+form input {
+    margin-bottom: 1rem;
+    border: none;
+    height: 3vw;
+    max-height: 50px; 
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+.rating-box-post {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    height: auto;
+    margin: 1rem 0;
+}
+
+.rating-box-post .stars {
+    display: flex;
+    gap: 5px;
+}
+
+.stars i {
+    color: #e6e6e6;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.stars i.active {
+    color: #ff9c1a;
+}
+
+textarea {
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical; 
+    height: auto;
+}
+
+form .submit {
+    width: 60%;
+    max-width: 200px;
+    align-self: center;
+    background-color: #F3D215;
+    font-weight: bolder;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* TESTIMONIALS STYLES */
+.testimonials {
+    width: 100%;
+    gap: 5%;
+    padding: 0 2% 0 2%;
+}
+.testimonials h1 {
+    grid-column: 1 /-1;
+}
+.t-blocks {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(5px); 
+    padding: 0.9rem;
+    border-radius: 0.6rem;
+    margin-bottom: 5%;
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+}
+
+
+.p-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.p-details img {
+    width: 20%; 
+    height: 20%; 
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.p-details h3 {
+    font-size: large;
+    text-align: right;
+    color: white;
+    font-weight: bolder;
+}
+.datetime {
+    font-size: 0.6rem;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    color: #F3D215;
+    text-align: right;
+}
+.message {
+    font-size: 0.8rem;
+    padding: 5% 1% 1% 1%; 
+    text-align: justify;
+}
+
+#veepn-breach-alert {
+    display: none;
+}
+
+/* RESPONSIVE STYLES */
+@media screen and (max-width: 576px) {
+    .container-fluid {
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .img-1 {
+        visibility: hidden;
+    }
+    .block-item {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .border-left {
+        border-left: none !important;
+        padding-left: 0 !important;
+    }
+
+    h1, h3{
+        margin: 8% 5% 8% 5%;
+        font-size: larger;
+    }
+
+    p{
+        font-size: smaller;
+    }
+    .t-blocks {
+        padding: 2.5%;
+        border-radius: 3%;
+        margin-bottom: 8% !important;
+    }
+
+    .t-block h3 {
+        font-size: medium;
+        margin-top: 0 ;
+    }
+
+    .t-block p {
+        font-size: small;
+    }
+
+    input, select {
+        width:70vw;
+        height: 5vh;
+        display: block;
+        margin-top: 1%;
+        margin-bottom: 7%;
+        align-self: center;
+    }
+
+    label {
+        margin-bottom: 0;
+    }
+    
+    button {
+        border: none;
+        border-radius: 3px;
+        height: 5vh;
+    }
+
+    form {
+        width: 90%;
+        padding: 2vw;
+    }
+
+    form h2 {
+        font-size: 1.2rem;
+    }
+
+    form label {
+        font-size: 0.9rem;
+    }
+
+    form input {
+        height: auto;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .stars i {
+        font-size: 1.2rem;
+    }
+
+    form .submit {
+        width: 70%;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
