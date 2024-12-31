@@ -1,0 +1,28 @@
+{
+  "name": "muhleprotour",
+  "version": "1.0.0",
+  "description": "Welcome to **Muhle Pro Tours**, your premier choice for reliable, luxurious, and tailored shuttle services. This README provides an overview of the website's structure, its features, and how to navigate through the various sections.",
+  "keywords": [
+    "API",
+    "Testimonials"
+  ],
+  "homepage": "https://github.com/PercyNova/MuhleProTour#readme",
+  "bugs": {
+    "url": "https://github.com/PercyNova/MuhleProTour/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PercyNova/MuhleProTour.git"
+  },
+  "license": "ISC",
+  "author": "Percy Nova",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}

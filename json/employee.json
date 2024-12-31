@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Brian Mkhabela",
+        "goal": "My goal is to ensure each passenger feels safe and valued, turning every ride into a pleasant journey.",
+        "occupation": "CEO"
+    },
+    {
+        "name": "Thando Dlamini",
+        "goal": "My mission is to foster a workplace where our staff feels appreciated, allowing us to provide top-notch services.",
+        "occupation": "HR Specialist"
+    },
+    {
+        "name": "Sipho Mahlangu",
+        "goal": "I strive to maintain the highest standards in our services, ensuring client satisfaction every time.",
+        "occupation": "Management"
+    },
+    {
+        "name": "Lerato Sibiya",
+        "goal": "Your concerns matter. I'm here to listen and ensure your experience is seamless.",
+        "occupation": "Customer Support"
+    },
+    {
+        "name": "Solomon Ndlovu",
+        "goal": "Punctuality and safety are my utmost priorities. I drive to make your journey stress-free.",
+        "occupation": "Driver"
+    },
+    {
+        "name": "Blessing Mnisi",
+        "goal": "My focus is to maintain transparency and ensure that our services remain cost-effective for everyone.",
+        "occupation": "Finance"
+    },
+    {
+        "name": "Joy Sibande",
+        "goal": "By ensuring our tech runs smoothly, I aim to make your booking experience as easy as clicking a button.",
+        "occupation": "IT Specialist"
+    },
+    {
+        "name": "Thabo Nkosi",
+        "goal": "Every day, I seek innovative ways to let the world know about the unparalleled services we offer.",
+        "occupation": "Marketing"
+    }
+]

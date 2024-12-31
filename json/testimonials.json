@@ -1,0 +1,86 @@
+[
+  {
+    "fullName": "Thandiwe Ndlovu",
+    "email": "thandiwe.ndlovu@email.com",
+    "comment": "Amazing experience, will definitely recommend the shuttle service!",
+    "rating": 5,
+    "date": "January 5, 2023, 10:15 AM"
+  },
+  {
+    "fullName": "Sipho Moyo",
+    "email": "sipho.moyo@outlook.com",
+    "comment": "Great customer support and the shuttle service was reliable and timely.",
+    "rating": 4,
+    "date": "March 12, 2023, 02:34 PM"
+  },
+  {
+    "fullName": "Lerato Khumalo",
+    "email": "lerato.khumalo@gmail.com",
+    "comment": "",
+    "rating": 4,
+    "date": "April 8, 2023, 09:20 AM"
+  },
+  {
+    "fullName": "Jabulani Zulu",
+    "email": "jabu.zulu@aol.com",
+    "comment": "The shuttle was comfortable, and the driver was professional.",
+    "rating": 5,
+    "date": "May 15, 2023, 01:30 PM"
+  },
+  {
+    "fullName": "Zanele Dlamini",
+    "email": "zanele.dlamini@webmail.co.za",
+    "comment": "The shuttle ride was smooth, and I felt very safe during the journey.",
+    "rating": 4,
+    "date": "July 23, 2023, 10:05 AM"
+  },
+  {
+    "fullName": "Mpho Mthembu",
+    "email": "mpho.mthembu@icloud.com",
+    "comment": "",
+    "rating": 5,
+    "date": "August 19, 2023, 08:50 PM"
+  },
+  {
+    "fullName": "Gugu Ncube",
+    "email": "gugu.ncube@ymail.com",
+    "comment": "The shuttle service was punctual, and the ride was comfortable.",
+    "rating": 4,
+    "date": "September 7, 2023, 04:15 PM"
+  },
+  {
+    "fullName": "Bongani Mkhize",
+    "email": "bongani.mkhize@zoho.com",
+    "comment": "Great shuttle service, highly recommend for business trips.",
+    "rating": 5,
+    "date": "October 2, 2023, 11:05 AM"
+  },
+  {
+    "fullName": "Nandi Gwala",
+    "email": "nandi.gwala@live.com",
+    "comment": "Fantastic shuttle service! The driver was friendly and professional.",
+    "rating": 5,
+    "date": "November 10, 2023, 05:30 PM"
+  },
+  {
+    "fullName": "Mthokozisi Mabuza",
+    "email": "mthokozisi.mabuza@fastmail.com",
+    "comment": "Quick and easy process to book the shuttle. Very satisfied!",
+    "rating": 4,
+    "date": "February 20, 2024, 01:10 PM"
+  },
+  {
+    "fullName": "Ayanda Ndaba",
+    "email": "ayanda.ndaba@gmail.com",
+    "comment": "Great shuttle service, the vehicle was clean and well-maintained.",
+    "rating": 4,
+    "date": "March 18, 2024, 09:45 AM"
+  },
+  {
+    "fullName": "Sibusiso Shabalala",
+    "email": "sibusiso.shabalala@outlook.com",
+    "comment": "A wonderful shuttle experience. Highly recommend!",
+    "rating": 5,
+    "date": "April 25, 2024, 12:20 PM"
+  }
+]

@@ -47,49 +47,58 @@ async function loadTNCContent() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const tncData = await response.json();
-        
+
         // Create the main container for accordion
         const tncAccordion = document.createElement('div');
         tncAccordion.classList.add('accordion');
         tncAccordion.id = 'tncAccordion';
-  
+
         // Create sticky header container for h2 and close button only
         const stickyHeaderContainer = document.createElement('div');
         stickyHeaderContainer.classList.add('tnc-header-sticky');
-  
+
         // Add the header content (only h2 and close button)
         const headerContent = document.createElement('div');
         headerContent.classList.add('tnc-header');
         headerContent.innerHTML = `
             <h2>${tncData.title}</h2>
         `;
-  
+
         // Create close button
         const closeButton = document.createElement('button');
         closeButton.id = 'closeTnc';
         closeButton.innerHTML = 'X';
+
+        // Attach the close event to the dynamically created button
+        closeButton.addEventListener('click', () => {
+            const tncModal = document.getElementById('tncModal');
+            const overlay = document.getElementById('overlay');
+            tncModal.style.display = 'none';
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Enable scrolling
+        });
+
         stickyHeaderContainer.appendChild(headerContent);
         stickyHeaderContainer.appendChild(closeButton);
-  
+
         // Create the rest of the content (title, lastUpdated, welcome) in the scrollable div
         const contentDiv = document.createElement('div');
         contentDiv.classList.add('tnc-content');
         contentDiv.innerHTML = `
-
             <p><strong>Last Updated:</strong> ${tncData.lastUpdated}</p>
             <p>${tncData.welcome}</p>
         `;
-  
+
         // Create accordion items for each section
         tncData.sections.forEach((section, index) => {
             const card = document.createElement('div');
             card.classList.add('card');
-  
+
             // Create card header
             const cardHeader = document.createElement('div');
             cardHeader.classList.add('card-header');
             cardHeader.id = `tnc${index + 1}`;
-  
+
             const headerButton = document.createElement('button');
             headerButton.classList.add('btn', 'btn-link');
             headerButton.setAttribute('type', 'button');
@@ -98,25 +107,25 @@ async function loadTNCContent() {
             headerButton.setAttribute('aria-expanded', 'false');
             headerButton.setAttribute('aria-controls', `tncCollapse${index + 1}`);
             headerButton.innerText = `${index + 1}. ${section.title}`;
-  
+
             cardHeader.appendChild(headerButton);
             card.appendChild(cardHeader);
-  
+
             // Create card body
             const cardBody = document.createElement('div');
             cardBody.id = `tncCollapse${index + 1}`;
             cardBody.classList.add('collapse');
             cardBody.setAttribute('aria-labelledby', `tnc${index + 1}`);
             cardBody.setAttribute('data-parent', '#tncAccordion');
-  
+
             const bodyContent = document.createElement('div');
             bodyContent.classList.add('card-body');
-  
+
             // Add main content if it exists
             if (section.content) {
                 bodyContent.innerHTML += `<p>${section.content}</p>`;
             }
-  
+
             // Add subsections if they exist
             if (section.subsections && section.subsections.length > 0) {
                 section.subsections.forEach(subsection => {
@@ -128,32 +137,19 @@ async function loadTNCContent() {
                     `;
                 });
             }
-  
+
             cardBody.appendChild(bodyContent);
             card.appendChild(cardBody);
             tncAccordion.appendChild(card);
         });
-  
+
         // Clear existing content and append new content
         const tncContent = document.getElementById('tncContent');
         tncContent.innerHTML = '';
         tncContent.appendChild(stickyHeaderContainer);
         tncContent.appendChild(contentDiv);  // Add the content div below the sticky header
         tncContent.appendChild(tncAccordion);
-  
-        // Initialize Bootstrap collapse functionality
-        const collapseElements = document.querySelectorAll('.collapse');
-        collapseElements.forEach(element => {
-            element.addEventListener('show.bs.collapse', () => {
-                const button = document.querySelector(`[data-target="#${element.id}"]`);
-                button.classList.add('active');
-            });
-            element.addEventListener('hide.bs.collapse', () => {
-                const button = document.querySelector(`[data-target="#${element.id}"]`);
-                button.classList.remove('active');
-            });
-        });
-  
+
     } catch (error) {
         console.error('Error loading TNC data:', error);
         document.getElementById('tncContent').innerHTML = `
@@ -161,6 +157,4 @@ async function loadTNCContent() {
             <p>Sorry, we're having trouble displaying the Terms and Conditions. Please try again later.</p>
         `;
     }
-  }
-  
-  
+}

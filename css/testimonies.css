@@ -78,7 +78,7 @@ textarea {
 }
 
 form .submit {
-    width: 60%;
+    height: 10rem;
     max-width: 200px;
     align-self: center;
     background-color: #F3D215;
@@ -116,8 +116,7 @@ form .submit {
     align-items: center;
 }
 .p-details img {
-    width: 20%; 
-    height: 20%; 
+    height: 8rem;
     border-radius: 50%; 
     object-fit: cover;
     margin-right: 10px;

@@ -64,6 +64,7 @@ h2 {
     transition: transform 0.4s;
     backdrop-filter: blur(10px);
     background-color: #ffffff3d;
+    cursor: pointer;
 }
 
 .bcard p{

@@ -78,6 +78,22 @@ a:hover {
     justify-content: center;
 }
 
+/* Hide navbar when scrolling down */
+.navbar.hidden {
+    transform: translateY(-100%); /* Moves navbar offscreen */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Ensure navbar appears smoothly when scrolling up */
+.navbar {
+    position: fixed; /* Keep navbar fixed at the top */
+    top: -0.3vw;
+    left: 0;
+    width: 100%; /* Full width */
+    z-index: 1000; /* Make sure it stays on top of other elements */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
 /* FOOTER STYLES */
 .container-fluid {
     background-color: #000000;
@@ -161,8 +177,8 @@ a:hover {
     animation: fadeIn 0.3s ease-in-out;
 }
 
-#tncContent {
-    padding: 20px;
+.tnc-content {
+    padding: 3vw;
     font-size: 16px;
     line-height: 1.5;
 }
@@ -306,9 +322,27 @@ button#close-faq {
     font-size: 0.6rem; /* Use relative units */
 }
 
-.btn-link {
-    color: #380002;
+.btn.btn-link {
+    border: none;
+    text-decoration: none;
+    color: inherit;
     font-weight: bold;
+}
+
+.btn.btn-link:hover,
+.btn.btn-link:focus,
+.btn.btn-link:active {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    box-shadow: none;
+}
+
+#closeTnc:focus, 
+#closeTnc:active {
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
 
 .btn-close {
