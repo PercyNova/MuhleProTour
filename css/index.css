@@ -28,28 +28,28 @@ span h3 {
     width: 100%;
     gap: 5%;
     padding: 0 2% 0 2%;
-    margin-bottom: 10%;
 }
 .testimonials h1 {
     grid-column: 1 /-1;
 }
 .t-blocks {
     width: 100%;
-    background-color: rgba(206, 206, 206, 0.205); /* Slightly transparent white for the glass effect */
-    backdrop-filter: blur(50px); /* Creates the blur effect behind the element */
-    padding: 2.5%;
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(5px); 
+    padding: 0.9rem;
+    border-radius: 0.6rem;
     margin-bottom: 5%;
-    border: 1px solid rgba(255, 255, 255, 0.096); /* Optional: Adds a subtle border */
+    border: 1px solid rgba(255, 255, 255, 0.15); 
 }
 
 
 .p-details {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .p-details img {
-    width: 20%; 
-    height: 20%;  /* Set the height to the same percentage as the width */
+    height: 8rem;
     border-radius: 50%; 
     object-fit: cover;
     margin-right: 10px;
@@ -57,66 +57,31 @@ span h3 {
 
 .p-details h3 {
     font-size: large;
-    text-align: start;
+    text-align: right;
     color: white;
+    font-weight: bolder;
 }
-.location {
-    font-size: smaller;
+.datetime {
+    font-size: 0.6rem;
     white-space: nowrap;
     margin: 0;
     padding: 0;
     color: #F3D215;
-    text-align: start;
+    text-align: right;
 }
 .message {
-    font-size: small;
+    font-size: 0.8rem;
     padding: 5% 1% 1% 1%; 
     text-align: justify;
 }
-.to-Tpage {
-    text-align: center;
 
-}
-.to-Tpage a {
+.to-Tpage a{
     color: #F3D215;
-    font-size: large;
 }
 
-.to-Tpage a:hover {
+.to-Tpage a:hover{
+    color: #F3D215;
     text-decoration: underline;
-}
-
-.info {
-    width: 60%;
-}
-
-/* RATING */
-.rating{
-    color: #000;
-    font-size: small;
-}
-
-.rating-box {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  border-radius: 25px;
-  height: 5%;
-}
-
-.rating-box .stars {
-  display: flex;
-  gap: 3px;
-}
-
-.stars i {
-  color: #e6e6e6;
-  font-size: 20px;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-.stars i.active {
-  color: #F3D215;
 }
 
 /* CALL TO ACTION STYLES */
