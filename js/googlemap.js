@@ -15,7 +15,7 @@ const CONFIGURATION = {
     maxZoom: 22,
     mapId: "",
   },
-  mapsApiKey: "Insert your own key",
+  mapsApiKey: "AIzaSyDvdycT144relnjBHZA_9EkGQLKArS-3hA",
 };
 
 const SHORT_NAME_ADDRESS_COMPONENT_TYPES = new Set([

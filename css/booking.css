@@ -1,82 +1,131 @@
-/* FORM */
+/* Base Form Styles */
 .form {
-    display: flex;
-    width: 60%;
-    align-items: center;
-    background-color: #ffffff60;
-    border-radius: 10px;
-    margin: 5% auto;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
-    padding: 0.4rem;
+    max-width: 800px;
+    width: 90%;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(249, 249, 249, 0.98));
+    border-radius: 20px;
+    margin: 3rem auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border: 1px solid rgba(243, 210, 21, 0.3);
     position: relative;
 }
 
+/* Form Header */
 .form-head {
-    font-size: 1.5rem;
-    font-weight: bolder;
-    color: #F3D215;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
 }
 
+.form-head::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #F3D215;
+    border-radius: 2px;
+}
+
+/* Form Layout */
 #serviceForm {
-    margin: 5%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    gap: 1.5rem;
     width: 100%;
-    align-items: center;
 }
 
-input, select {
-    width: 50vw;  /* Ensures consistent width */
-    height: 5vh;
-    display: block;
-    border-radius: 5px;
-    padding: 1.5rem;
-    border: none;
-    margin-bottom: 3%;
-    background-color: #fefefee5;
-    color: #000000;
-    box-sizing: border-box; /* Ensures padding doesn't break the size */
+/* Input Groups */
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
 }
 
+/* Labels */
 label {
+    display: block;
+    margin-bottom: 0.5rem;
     color: #000000;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
-input:focus{
-    outline: none; 
-}
-
-#price {
-    display: inline !important;
-    width: 15vw;
-    background-color: #ffffffd3;
+/* All Input Fields */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
     color: #000000;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
 }
 
-button {
-    border: none;
-    border-radius: 3px;
-    height: 5vh;
-    font-weight: bold;
-    background-color: #fff;
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #F3D215;
+    box-shadow: 0 0 0 4px rgba(243, 210, 21, 0.15);
+    background-color: #ffffff;
 }
 
-.price-button {
-    background-color: #000000 !important;
-    color: #fff;
-    font-weight: lighter;
-    border-radius: 6px;
+/* Service Type Select */
+#serviceType {
+    width: 100%;
+    height: auto;
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
 }
 
-.btn-ctp {
-    border-radius: 10px !important;
-    background-color: #F3D215 !important;
-    align-self: center;
-    width: 25vw;
-    margin-top: 5%;
+/* Location Sections */
+.pickup,
+.dropoff {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.main-container {
+    display: none;
+}
+
+
+/* Location Icons and Titles */
+.sb-title-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.sb-title {
+    font-weight: 600;
+    margin-left: 0.5rem;
+    color: #000000;
+    vertical-align: middle;
+}
+
+/* Hidden Fields */
 #apt-pu,
 #locality-input-pu,
 #administrative_area_level_1-input-pu,
@@ -87,253 +136,278 @@ button {
 #administrative_area_level_1-input-do,
 #postal_code-input-do,
 #country-input-do {
-    display: none; /* Hide these fields */
+    display: none;
 }
 
-.half-input-container {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.half-input-container .half-input {
-    flex: 1;
-}
-
-/* Individual Input Fields Styling */
-#location-input-pu, #location-input-do{
-    padding: 1.5vw;
+/* Location Input Fields */
+#location-input-pu,
+#location-input-do {
+    width: 100%;
+    padding: 1rem 1.2rem;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-size: 1rem;
     box-sizing: border-box;
     outline: none;
-    width: 41.3vw;
-    height: 4vw;
 }
 
-input[type="text"]:focus {
-    border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+/* Price Section */
+.det-pri {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1.5rem 0;
 }
 
-/* Placeholder Text Styling */
-input::placeholder {
-    color: #999;
-    font-size: 14px;
+.price-button {
+    padding: 0.8rem 1.5rem;
+    background-color: #000000;
+    color: #F3D215;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
 }
 
-/* Container Layout */
-div {
-    margin-bottom: 15px;
+.price-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.rec-logo {
-    width: 5vw;
+#price {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000000;
 }
 
-.receipt {
-    background-color: #f9f9f99c;
-    padding: 20px;
-    margin-top: 20px;
+/* Submit Button */
+.btn-ctp {
     width: 100%;
-    max-width: 70vw;
-    margin: 20px auto;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
+    padding: 1rem;
+    background-color: #F3D215;
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    border: none;
 }
 
-.receipt-details p {
-    display: flex;
-    justify-content: space-between;
+.btn-ctp:hover {
+    background-color: #e6c514;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(243, 210, 21, 0.3);
 }
 
-.receipt-details strong {
-    font-weight: bolder;
-    font-size: 1.5vw;
+/* Receipt Styles */
+.receipt {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(249, 249, 249, 0.92));
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    width: min(90%, 800px);
+    margin: 2rem auto;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem);
 }
 
 .rec-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
-    padding: 1vw;
+    background: linear-gradient(90deg, #000000, #1a1a1a);
+    padding: clamp(1rem, 2vw, 1.5rem);
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.rec-logo {
+    width: clamp(3rem, 5vw, 4rem);
+    height: auto;
+    object-fit: contain;
 }
 
 .receipt h2 {
-    text-align: center;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
+    margin: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .receipt-details {
-    padding: 2vw;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
 }
 
 .receipt-details p {
-    font-size: 16px;
-    text-align: left;
-    padding: 1vw;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease;
 }
 
-.receipt-details span {
-    color: #ffffff;
+.receipt-details p:hover {
+    background-color: rgba(243, 210, 21, 0.05);
+}
+
+.receipt-details p:last-child {
+    border-bottom: none;
 }
 
 .receipt-details strong {
     color: #000000;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1vw + 0.5rem, 1.2rem);
 }
 
+.receipt-details span {
+    color: #333333;
+    font-size: clamp(0.875rem, 1vw + 0.4rem, 1.1rem);
+}
+
+/* Button Container */
 .buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 100%;
 }
 
-.pay-btn, .edit-btn {
-    width: 15vw;
-    height: 3vw;
-    border-radius: 7px;
+/* Payment and Edit Buttons */
+.pay-btn,
+.edit-btn {
+    flex: 1;
+    max-width: 200px;
+    min-width: 150px;
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
     font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-btn {
+    background-color: #FFD700;
+    color: #000000;
+    border-color: #FFD700;
+}
+
+.edit-btn:hover {
+    background-color: #F3D215;
+    transform: translateY(-2px);
 }
 
 .pay-btn {
     background-color: #000000;
-    color: #F3D215;
+    color: #FFD700;
+    border-color: #000000;
 }
 
-.edit-btn {
-    background-color: #F3D215;
-    color: #000000;
+.pay-btn:hover {
+    background-color: #1a1a1a;
+    transform: translateY(-2px);
 }
 
-/* RESPONSIVE STYLES */
-@media screen and (max-width: 576px) {
+/* Responsive Design */
+@media screen and (max-width: 768px) {
     .form {
-        width: 90%;
-    }
-    .container-fluid {
-        padding-top: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .img-1 {
-        visibility: hidden;
-    }
-    .block-item {
-        width: 80%;
-        margin-right: auto;
-        margin-left: auto;
-    }
-    .border-left {
-        border-left: none !important;
-        padding-left: 0 !important;
+        width: 95%;
+        padding: 1.5rem;
     }
 
-    h1, h3{
-        margin: 8% 5% 8% 5%;
-        font-size: larger;
+    h2 {
+        text-align: end;
     }
 
-    p{
-        font-size: smaller;
-    }
-    .t-blocks {
-        padding: 2.5%;
-        border-radius: 3%;
-        margin-bottom: 8% !important;
+    .form-head {
+        font-size: 1.8rem;
     }
 
-    .t-block h3 {
-        font-size: medium;
-        margin-top: 0 ;
+    input,
+    select,
+    textarea {
+        padding: 0.2rem 0.5rem;
     }
 
-    .t-block p {
-        font-size: small;
-    }
-
-    .map {
-        display: none;
-    }
-
-    #serviceForm {
-        justify-content: center;
-        align-items: center;
-    }
-
-    input, select {
-        width: 80vw; /* Make inputs wider on smaller screens */
-        height: 5vh;
-        display: block;
-        margin-top: 1%;
-        margin-bottom: 7%;
-        align-self: center;
-    }
-
-    label {
-        margin-bottom: 0;
-    }
-    
-    button {
-        border: none;
-        border-radius: 3px;
-        height: 5vh;
-    }
-
-    .btn-ctp {
-        width: 100%;
-    }
-
-    #price {
-        display: inline !important;
-        width: 40vw; /* Adjust price width on smaller screens */
-        color: #000000;
-    }
-    .half-input-container {
+    .det-pri {
         flex-direction: column;
     }
 
-    .half-input-container .half-input {
+    .price-button,
+    #price {
         width: 100%;
     }
 
-    #location-input-pu, #location-input-do{
-        padding: 1.5vw;
-        margin: 10px 0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-        box-sizing: border-box;
-        outline: none;
-        width: 80vw;
-        height: 11vw;
+    .buttons {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .buttons {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: space-around;
+    .pay-btn,
+    .edit-btn {
+        width: 100%;
+        max-width: none;
     }
-    
-    .pay-btn, .edit-btn {
-        width: 20vw;
-        height: 7vw;
-        border-radius: 7px;
-        font-size: 0.5rem;
-    }
+
+    .main-container {
+    display: none !important;
+}
 }
 
-@media (max-width: 600px) {
-    .receipt {
-        padding: 10px;
-        width: 80%;
+/* Extra Small Devices */
+@media screen and (max-width: 480px) {
+    .form {
+        padding: 1rem;
+    }
+
+    .form-head {
+        font-size: 1.5rem;
     }
 
     .receipt-details p {
-        font-size: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .receipt-details strong {
+        color: #F3D215;
+        background-color: #000000;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        width: 100%;
+    }
+
+    .receipt-details span {
+        padding-left: 0.5rem;
+    }
+
+    #location-input-pu,
+    #location-input-do {
+        padding: 0.8rem;
+        font-size: 0.9rem;
     }
 }

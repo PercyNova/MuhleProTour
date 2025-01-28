@@ -232,3 +232,142 @@ document.addEventListener('DOMContentLoaded', function () {
     alert('Coming Soon!');
   });
 });
+
+// Function to handle shadow DOM styling and layout
+function initializeLocationFields() {
+  // Wait for Custom Elements to be defined
+  customElements.whenDefined('gmpx-split-layout').then(() => {
+    // Get all split layout elements
+    const splitLayouts = document.querySelectorAll('gmpx-split-layout');
+    
+    splitLayouts.forEach(layout => {
+      // First, style the host element itself
+      Object.assign(layout.style, {
+        display: 'block',
+        height: 'auto',
+        minHeight: 'unset'
+      });
+
+      // Wait for shadow root to be available
+      if (layout.shadowRoot) {
+        applyShadowStyles(layout.shadowRoot);
+      } else {
+        // If shadow root isn't immediately available, observe for changes
+        const observer = new MutationObserver((mutations, obs) => {
+          if (layout.shadowRoot) {
+            applyShadowStyles(layout.shadowRoot);
+            obs.disconnect(); // Stop observing once shadow root is found
+          }
+        });
+        
+        observer.observe(layout, {
+          childList: true,
+          subtree: true
+        });
+      }
+    });
+  });
+}
+
+// Function to apply styles to shadow root elements
+function applyShadowStyles(shadowRoot) {
+  // Create and insert custom styles
+  const styleSheet = new CSSStyleSheet();
+  styleSheet.replaceSync(`
+    .main-container {
+      display: none !important;
+    }
+    .panel {
+      position: static !important;
+      height: auto !important;
+      max-height: none !important;
+      overflow: visible !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .input-container {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .content-container {
+      height: auto !important;
+      max-height: none !important;
+      overflow: visible !important;
+    }
+    .split-layout {
+      height: auto !important;
+      min-height: unset !important;
+    }
+  `);
+
+  // Adopt the stylesheet
+  try {
+    shadowRoot.adoptedStyleSheets = [styleSheet];
+  } catch (e) {
+    // Fallback for browsers that don't support adoptedStyleSheets
+    const styleElement = document.createElement('style');
+    styleElement.textContent = styleSheet.toString();
+    shadowRoot.appendChild(styleElement);
+  }
+
+  // Direct style application for immediate effect
+  const mainContainer = shadowRoot.querySelector('.main-container');
+  if (mainContainer) {
+    Object.assign(mainContainer.style, {
+      display: 'none',
+      height: '0',
+      minHeight: '0'
+    });
+  }
+
+  const panel = shadowRoot.querySelector('.panel');
+  if (panel) {
+    Object.assign(panel.style, {
+      position: 'static',
+      height: 'auto',
+      maxHeight: 'none',
+      overflow: 'visible',
+      padding: '0',
+      margin: '0'
+    });
+  }
+
+  const contentContainer = shadowRoot.querySelector('.content-container');
+  if (contentContainer) {
+    Object.assign(contentContainer.style, {
+      height: 'auto',
+      maxHeight: 'none',
+      overflow: 'visible'
+    });
+  }
+
+  const splitLayout = shadowRoot.querySelector('.split-layout');
+  if (splitLayout) {
+    Object.assign(splitLayout.style, {
+      height: 'auto',
+      minHeight: 'unset'
+    });
+  }
+}
+
+// Initialize as soon as DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeLocationFields);
+
+// Additional event listener for dynamic content
+window.addEventListener('load', initializeLocationFields);
+
+// Handle dynamic insertion of gmpx-split-layout elements
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    mutation.addedNodes.forEach((node) => {
+      if (node.nodeName === 'GMPX-SPLIT-LAYOUT') {
+        initializeLocationFields();
+      }
+    });
+  });
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});

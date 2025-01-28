@@ -153,9 +153,8 @@ a:hover {
     position: sticky;
     top: 0;
     z-index: 1001;
-    background-color: #f8f9fa;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #030303;
+    padding: 1vw;
     border-bottom: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
@@ -188,6 +187,7 @@ a:hover {
     font-weight: bold;
     margin-bottom: 10px;
     font-size: 1rem;
+    padding: 1vw 0 0 1vw;
 }
 
 .subsection {
@@ -211,16 +211,15 @@ a:hover {
 
 #closeTnc {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0;
+    right: 0;
     background-color: #dc3545;
     color: white;
     border: none;
-    border-radius: 50%;
     width: 30px;
     height: 30px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 1rem;
 }
 
 @keyframes fadeIn {
@@ -312,14 +311,18 @@ body.no-scroll {
 }
 
 button#close-faq {
-    background-color: #dc3545; /* Red background */
+    background-color: #dc3545;
     color: white;
     width: 30px;
     height: 30px;
     border: none;
-    border-radius:50%; 
     cursor: pointer;
-    font-size: 0.6rem; /* Use relative units */
+    font-size: 1rem;
+    display: flex;           /* Added for centering */
+    align-items: center;     /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    padding: 0;             /* Remove default padding */
+    line-height: 1;         /* Reset line height */
 }
 
 .btn.btn-link {
@@ -348,6 +351,11 @@ button#close-faq {
 .btn-close {
     color: #F3D215;
     background-color: #671316;
+    display: flex;           /* Added for centering */
+    align-items: center;     /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    padding: 0;             /* Remove default padding */
+    line-height: 1;         /* Reset line height */
 }
 
 #faqContent ul {
@@ -395,6 +403,47 @@ button#close-faq {
     }
 }
 
+@media (max-width: 500px) {
+    #faq-section {
+        width: 95vw;
+        height: 90vh;
+        top: 5vh;
+    }
+
+    .faq-header {
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+    }
+
+    .faq-header h2 {
+        font-size: 1rem;
+    }
+
+    button#close-faq {
+        width: 24px;
+        height: 24px;
+        font-size: 0.8rem;
+    }
+
+    .faq-container {
+        padding: 15px;
+    }
+
+    #faqContent ul li {
+        font-size: 0.9rem;
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+    button#close-faq {
+        width: 24px;
+        height: 24px;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
 
 /* Animation for Smooth Fade-In */
 @keyframes fadeIn {
@@ -427,6 +476,10 @@ button#close-faq {
         margin-left: auto;
     }
 
+    .btn.btn-link {
+        font-size: 0.6rem;
+    }
+
     .border-left {
         border-left: none !important;
         padding-left: 0 !important;
@@ -434,7 +487,7 @@ button#close-faq {
 
     h1, h3 {
         margin: 8% 5% 8% 5%;
-        font-size: larger;
+        font-size: medium;
     }
 
     p {
